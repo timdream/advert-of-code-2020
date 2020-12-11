@@ -221,15 +221,17 @@ function findCalc(v) {
     let s = 0;
     for (let i = 1; i < v.length; i++) {
         if ((v[i] - v[i - 1]) === 3) {
-            count *= calc(v.slice(s, i), 1);
+            let nn = calc(v.slice(s, i), 1);
+            console.log("nn", nn);
+            count *= nn;
             s = i;
         }
     }
     return count;
 }
 
-console.log(findCalc(example1, 1));
-console.log(findCalc(volts, 1));
+console.log(">>>", findCalc(example1, 1));
+console.log(">>>", findCalc(volts, 1));
 
 // calc(volts, 1);
 
